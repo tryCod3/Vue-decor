@@ -17,4 +17,12 @@ export default {
 	padding: 0 !important;
 	box-sizing: border-box !important;
 }
+.choise {
+	color: #f4f5f0 !important;
+	font-weight: bold !important;
+}
+.default {
+	color: #b2b9a1 !important;
+	font-weight: bold !important;
+}
 </style>
