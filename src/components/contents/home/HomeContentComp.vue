@@ -1,21 +1,25 @@
 <template>
-	<div class="d-flex flex-sm-column justify-content-sm-center bgHome">
+	<div class="d-flex flexs-column justify-content-sm-center">
 		<div class="row">
 			<div class="col-sm-1"></div>
 			<div
-				class="d-flex flex-sm-column justify-content-sm-around content_HomeDes col-sm-11 col-md-4 col-lg-6"
+				class="d-flex flex-column justify-content-around content_HomeDes col-sm-11 col-md-6"
 			>
-				<div>
-					<h1 class="choise">{{ title1 }}</h1>
-					<h1 class="choise">{{ title2 }}</h1>
+				<div class="choise text-center text-md-start">
+					<h1>
+						{{ title1 }}
+					</h1>
+					<h1>{{ title2 }}</h1>
 				</div>
 				<div>
 					<p class="default">
 						{{ des }}
 					</p>
 				</div>
-				<div>
-					<buttonss
+				<div
+					class="d-flex justify-content-center justify-content-md-start"
+				>
+					<button
 						class="btn-success"
 						style="
 							padding: 5px 30px !important;
@@ -23,10 +27,10 @@
 						"
 					>
 						Our Products
-					</buttonss>
+					</button>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-6 col-lg-4"></div>
+			<div class="col-sm-12 col-md-6"></div>
 		</div>
 	</div>
 </template>
@@ -45,13 +49,6 @@ export default {
 </script>
 
 <style>
-.bgHome {
-	background-image: url("@/assets/img/bgHomeTree.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100%;
-	width: 100%;
-}
 .content_HomeDes {
 	border-radius: 15px;
 	padding: 5px !important;

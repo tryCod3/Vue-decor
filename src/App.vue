@@ -17,6 +17,13 @@ export default {
 	padding: 0 !important;
 	box-sizing: border-box !important;
 }
+body {
+	background-image: url("@/assets/img/bgHomeTree.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+}
 .choise {
 	color: #f4f5f0 !important;
 	font-weight: bold !important;

@@ -1,8 +1,12 @@
 <template>
-	<div class="container-fluid p-2">
+	<div class="container-fluid">
 		<HeaderPageComp />
 		<ContentsComp />
-		<div class="overlay col-md-6 col-lg-8"></div>
+		<div class="overlay col-md-7 col-lg-8">
+			<div
+				class="overlay--bottom d-none d-lg-block col-md-7 col-lg-8"
+			></div>
+		</div>
 	</div>
 </template>
 
@@ -21,10 +25,17 @@ export default {
 <style>
 .overlay {
 	position: absolute;
-
-	height: 567px;
-	background: rgba(66, 48, 57, 0.7);
 	top: 0;
 	left: 0;
+	height: 497px;
+	background: rgba(66, 48, 57, 0.7);
+}
+.overlay--bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100px;
+	width: 100% !important;
+	background: rgba(255, 255, 255, 0.1);
 }
 </style>
