@@ -1,3 +1,7 @@
+export const productModel = function (product) {
+	this.model = JSON.parse(JSON.stringify(product));
+};
+
 export const langModel = function (value, name) {
 	this.value = value;
 	this.name = name;

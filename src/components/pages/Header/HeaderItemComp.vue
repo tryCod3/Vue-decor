@@ -1,7 +1,7 @@
 <template>
 	<router-link :to="path" :class="defaultCss">
 		<div @click="handelChangeIndex">
-			{{ $t(`links[${idx}]`) }}
+			{{ $t(`header.links[${idx}]`) }}
 		</div>
 	</router-link>
 </template>

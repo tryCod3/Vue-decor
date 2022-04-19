@@ -1,7 +1,7 @@
 <template>
-	<div class="row header m-2">
+	<div class="row header">
 		<div
-			class="d-flex justify-content-center justify-content-sm-end header__icon col-12 col-sm-2"
+			class="d-flex justify-content-center justify-content-sm-end header__icon col-12 col-sm-2 col-md-1"
 		>
 			<div
 				class="d-flex flex-column align-items-center header__icon__wrapper"
@@ -40,7 +40,7 @@
 			</div>
 		</div>
 		<div
-			class="d-flex flex-sm-column justify-content-sm-center col-12 col-md-5 col-lg-4"
+			class="d-flex flex-sm-column justify-content-sm-center col-12 col-md-6 col-lg-5"
 		>
 			<div
 				style="width: 100%"
@@ -50,7 +50,7 @@
 				<span style="color: #b2b9a1">|</span>
 				<input
 					type="text"
-					placeholder="Search plans"
+					:placeholder="$t('header.search')"
 					style="margin: 0px 1% !important; height: 100%"
 					class="form-control"
 				/>
@@ -76,7 +76,7 @@
 <script>
 import HeaderItemComp from "@/components/pages/header/HeaderItemComp.vue";
 import { linkModel, langModel } from "../../../model";
-import { i18nAction } from "@/constan/index";
+import { i18nConstan } from "@/constan/index";
 export default {
 	name: "header-page-comp",
 	components: {
@@ -105,7 +105,7 @@ export default {
 		},
 		ChangeLang() {
 			this.$store.dispatch(
-				i18nAction.PREFIX + i18nAction.SET_LANG,
+				i18nConstan.prefix(i18nConstan.action.SET_LANG),
 				this.lang
 			);
 		},

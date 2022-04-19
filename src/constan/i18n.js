@@ -1,4 +1,8 @@
-export const i18nAction = {
+export const action = {
 	PREFIX: "i18n/",
-	SET_LANG: "i18n_SET_LANG",
+	SET_LANG: "SET_LANG",
+};
+
+export const prefix = cmd => {
+	return action.PREFIX + cmd;
 };

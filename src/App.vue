@@ -21,7 +21,6 @@ body {
 	background-image: url("@/assets/img/bgHomeTree.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
 }
 .choise {
 	color: #f4f5f0 !important;

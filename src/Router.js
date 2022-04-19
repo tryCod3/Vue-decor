@@ -23,6 +23,14 @@ const router = new VueRouter({
 				),
 		},
 		{
+			path: "/OurProducts",
+			name: "OurProducts",
+			component: () =>
+				import(
+					/* webpackChunkName: "OurProducts" */ "@/components/contents/cart/CartContentComp.vue"
+				),
+		},
+		{
 			path: "*",
 			name: "error",
 			component: () =>
