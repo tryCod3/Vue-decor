@@ -1,14 +1,36 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomePageComp from "./components/contents/home/HomeContentComp.vue";
 
 Vue.use(VueRouter);
 
-export const router = new VueRouter({
+const router = new VueRouter({
 	mode: "history",
 	routes: [
-		{ path: "/", component: HomePageComp },
-		{ path: "/Home", component: HomePageComp },
-		{ path: "*", component: HomePageComp },
+		{
+			path: "/",
+			name: "default",
+			component: () =>
+				import(
+					/* webpackChunkName: "default" */ "@/components/contents/home/HomeContentComp.vue"
+				),
+		},
+		{
+			path: "/Home",
+			name: "home",
+			component: () =>
+				import(
+					/* webpackChunkName: "home" */ "@/components/contents/home/HomeContentComp.vue"
+				),
+		},
+		{
+			path: "*",
+			name: "error",
+			component: () =>
+				import(
+					/* webpackChunkName: "error" */ "@/components/contents/home/HomeContentComp.vue"
+				),
+		},
 	],
 });
+
+export default router;

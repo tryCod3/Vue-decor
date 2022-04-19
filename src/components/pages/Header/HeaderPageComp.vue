@@ -29,13 +29,14 @@
 				style="width: 100%"
 				class="d-flex flex-row flex-sm-wrap justify-content-around"
 			>
-				<divs
-					is="HeaderItemComp"
-					v-for="item in linkArr"
+				<HeaderItemComp
+					v-for="(item, idx) in linkArr"
 					:key="item.id"
 					:model="item"
 					:index="index"
-				></divs>
+					:idx="idx"
+					@change-index="changeIndex"
+				/>
 			</div>
 		</div>
 		<div
@@ -58,14 +59,24 @@
 					alt="icon lock"
 					style="margin-left: 2s% !important"
 				/>
+				<select @change="ChangeLang" v-model="lang">
+					<option
+						v-for="lang in langArr"
+						:key="lang.value"
+						:value="lang.value"
+					>
+						{{ lang.name }}
+					</option>
+				</select>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import HeaderItemComp from "./HeaderItemComp.vue";
-import { linkModel } from "../../../model";
+import HeaderItemComp from "@/components/pages/header/HeaderItemComp.vue";
+import { linkModel, langModel } from "../../../model";
+import { i18nAction } from "@/constan/index";
 export default {
 	name: "header-page-comp",
 	components: {
@@ -73,6 +84,10 @@ export default {
 	},
 	data() {
 		return {
+			langArr: [
+				new langModel("vn", "Việt Nam"),
+				new langModel("en", "English"),
+			],
 			linkArr: [
 				new linkModel(1, "Home"),
 				new linkModel(2, "Features"),
@@ -80,9 +95,22 @@ export default {
 				new linkModel(4, "Contacts"),
 			],
 			title: "BONSAI",
+			lang: "vn",
 			index: 1,
 		};
 	},
+	methods: {
+		changeIndex(data) {
+			this.index = data.id || this.index;
+		},
+		ChangeLang() {
+			this.$store.dispatch(
+				i18nAction.PREFIX + i18nAction.SET_LANG,
+				this.lang
+			);
+		},
+	},
+	watch: {},
 };
 </script>
 

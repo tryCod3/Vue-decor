@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HeaderPageComp from "./header/HeaderPageComp.vue";
+import HeaderPageComp from "@/components/pages/header/HeaderPageComp.vue";
 import ContentsComp from "../contents/ContentsComp.vue";
 export default {
 	name: "page-comp",

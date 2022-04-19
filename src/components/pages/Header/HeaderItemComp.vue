@@ -1,5 +1,9 @@
 <template>
-	<router-link :to="path" :class="defaultCss">{{ model.name }}</router-link>
+	<router-link :to="path" :class="defaultCss">
+		<div @click="handelChangeIndex">
+			{{ $t(`links[${idx}]`) }}
+		</div>
+	</router-link>
 </template>
 
 <script>
@@ -9,6 +13,16 @@ export default {
 	props: {
 		model: linkModel,
 		index: Number,
+		idx: Number,
+	},
+	methods: {
+		handelChangeIndex() {
+			var data = {
+				id: this.model.id,
+			};
+
+			this.$emit("change-index", data);
+		},
 	},
 	computed: {
 		defaultCss: function () {

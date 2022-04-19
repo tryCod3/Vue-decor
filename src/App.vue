@@ -22,7 +22,6 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
-	width: 100vw;
 }
 .choise {
 	color: #f4f5f0 !important;
